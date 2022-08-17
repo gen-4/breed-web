@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="cointainer is-centered columns is-multiline is-mobile">
+
+        {% for breed in breeds %}
+            
+                <a class="column is-one-quarter" href={{ breed.detailed_link }}>
+                    <div class="card has-text-centered">
+                        <img src={{ breed.image_path }} />
+                        <div class="card-header">
+                            <p class="card-header-title is-centered">{{ breed.name }}</p>
+                        </div>
+                        <div class="card-content">
+                            <p>{{ breed.country }}</p>
+                        </div>
+                    </div>
+                </a>
+
+        {% endfor %}
+
+    </div>
+{% endblock content %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="columns is-centered card-container">
+        <div class="column is-half is-centered card has-text-centered"
+            <img src={{ breed.image }} />
+
+            <div class="card-header has-text-centered">
+                <p class="card-header-title is-centered">{{ breed.name }}</p>
+            </div>
+
+            <div class="card-content has-text-centered">
+                <p>{{ breed.description }}</p>
+                <p>{{ breed.avg_height }}</p>
+                <p>{{ breed.avg_weight }}</p>
+                <p>{{ breed.country }}</p>
+                <p>{{ breed.blood }}</p>
+
+                {% if coats %}
+                    <label for="coats">Coats</label>
+                {% endif %}
+                <p id="coats">{{ coats }}</p>
+                
+                {% if disciplines %}
+                    <label for="disciplines">Disciplines</label>
+                {% endif %}
+                <p id="disciplines">{{ disciplines }}</p>
+                
+                    <div class="predecessors-wrapper">
+                {% if predecessors %}
+                    
+                        <label for="predecessors">Predecessors</label>
+                {% endif %}
+                {% for predecessor in predecessors %}
+                        <a href={{ predecessor.link }}><p id="predecessors">{{ predecessor.name }}</p></a>
+                {% endfor %}
+                    </div>
+            </div>
+        <div>
+    </div>
+
+{% endblock content %}

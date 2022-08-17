@@ -1,0 +1,8 @@
+.predecessors-wrapper {
+    flex: auto;
+    flex-direction: row;
+}
+
+.custom-header {
+    margin-bottom: 4%;
+}

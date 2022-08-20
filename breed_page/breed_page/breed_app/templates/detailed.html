@@ -12,10 +12,22 @@
 
             <div class="card-content has-text-centered">
                 <p>{{ breed.description }}</p>
-                <p>{{ breed.avg_height }}</p>
-                <p>{{ breed.avg_weight }}</p>
-                <p>{{ breed.country }}</p>
-                <p>{{ breed.blood }}</p>
+                <div class="columns is-centered">
+                    <label class="single double" for="height">Height</label>
+                    <p class="double" id="height">{{ breed.avg_height }}</p>
+                </div>
+                <div class="columns is-centered">
+                    <label class="single double" for="weight">Weight</label>
+                    <p class="double" id="weight">{{ breed.avg_weight }}</p>
+                </div>
+                <div class="columns is-centered">
+                    <label class="single double" for="country">Country</label>
+                    <p class="double" id="country">{{ breed.country }}</p>
+                </div>
+                <div class="columns is-centered">
+                    <label class="single double" for="blood">Blood</label>
+                    <p class="double" id="blood">{{ breed.blood }}</p>
+                </div>
 
                 {% if coats %}
                     <label for="coats">Coats</label>
@@ -28,13 +40,14 @@
                 <p id="disciplines">{{ disciplines }}</p>
                 
                     <div class="predecessors-wrapper">
-                {% if predecessors %}
-                    
-                        <label for="predecessors">Predecessors</label>
-                {% endif %}
-                {% for predecessor in predecessors %}
-                        <a href={{ predecessor.link }}><p id="predecessors">{{ predecessor.name }}</p></a>
-                {% endfor %}
+                        {% if predecessors %}
+                            <label for="predecessors">Predecessors</label>
+                        {% endif %}
+                        <div class="columns is-centered">
+                            {% for predecessor in predecessors %}
+                                    <a class="wrap" href={{ predecessor.link }}><p id="predecessors">{{ predecessor.name }}</p></a>
+                            {% endfor %}
+                        </div>
                     </div>
             </div>
         <div>

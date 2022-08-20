@@ -1,7 +1,15 @@
-.predecessors-wrapper {
-    flex: auto;
-    flex-direction: row;
+.wrap {
+    margin-top: 2%;
+    margin-right: 2%;
 }
+
+.single {
+    margin-right: 2%;
+} 
+
+.double {
+    margin-top: 2%;
+} 
 
 .custom-header {
     margin-bottom: 4%;
